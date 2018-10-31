@@ -10,13 +10,23 @@ module.exports = {
   attributes: {
 
     username: {
-      type: "string"
+      type: "string",
+      unique: true,
+      required: true
     },
 
     supervises: {
       collection: 'Person',
       via: 'worksFor'
     },
+    password: {
+      type: "string"
+    },
+    role: {
+      type: 'string',
+      enum: ['admin', 'tester', 'visitor'],
+      defaultsTo: 'visitor'
+  },
   },
   customToJSON: function () {
     // Return a shallow copy of this record with the password removed.
