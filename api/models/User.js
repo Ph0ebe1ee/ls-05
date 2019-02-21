@@ -24,7 +24,8 @@ module.exports = {
     },
     role: {
       type: 'string',
-      enum: ['admin', 'tester', 'visitor'],
+      isIn: ['admin', 'tester', 'visitor'],
+      //enum: ['admin', 'tester', 'visitor'],
       defaultsTo: 'visitor'
   },
   },
