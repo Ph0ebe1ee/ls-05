@@ -27,21 +27,7 @@ module.exports.bootstrap = async function (done) {
   // ]);
   // ```
 
-  sails.getInvalidIdMsg = function (opts) {
-
-    // if (opts.id != undefined && isNaN(parseInt(opts.id))) {
-    //   return "Primary key specfied is invalid (incorrect type).";
-    // }
-
-    // if (opts.fk != undefined && isNaN(parseInt(opts.fk))) {
-    //   return "Foreign key specfied is invalid (incorrect type).";
-    // }
-
-    return null;        // falsy
-
-  }
-
-  sails.bcrypt = require('bcrypt');
+  sails.bcrypt = require('bcryptjs');
   const saltRounds = 10;
 
   if (await Person.count() > 0) {
